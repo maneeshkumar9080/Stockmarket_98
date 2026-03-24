@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Portfolio Analysis</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Stock Portfolio Analysis</h1>
+        </header>
+        
+        <div class="main-content">
+            <div class="left-section">
+                <div class="chart-section">
+                    <div class="chart-controls">
+                        <button class="range-btn" data-range="1month">1month</button>
+                        <button class="range-btn" data-range="3month">3month</button>
+                        <button class="range-btn" data-range="1year">1year</button>
+                        <button class="range-btn" data-range="5year">5year</button>
+                    </div>
+                    <canvas id="stockChart"></canvas>
+                </div>
+                
+                <div class="detail-section">
+                    <div class="detail-content">
+                        <div class="detail-header">
+                            <h2 id="detailStockName">-</h2>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Book Value:</span>
+                            <span id="detailBookValue" class="detail-value">-</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Profit:</span>
+                            <span id="detailProfit" class="detail-value">-</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Peak Value:</span>
+                            <span id="detailPeakValue" class="detail-value">-</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Low Value:</span>
+                            <span id="detailLowValue" class="detail-value">-</span>
+                        </div>
+                        <div class="detail-summary">
+                            <p id="detailSummary">-</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="right-section">
+                <div class="list-section">
+                    <h2>Portfolio</h2>
+                    <div id="stockList" class="stock-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="modules/apiModule.js"></script>
+    <script src="modules/utilsModule.js"></script>
+    <script src="modules/chartModule.js"></script>
+    <script src="modules/listModule.js"></script>
+    <script src="modules/detailModule.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
